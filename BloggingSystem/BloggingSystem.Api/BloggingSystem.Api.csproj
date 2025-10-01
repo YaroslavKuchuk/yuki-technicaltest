@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BloggingSystem.AppServices\BloggingSystem.AppServices.csproj" />
+    <ProjectReference Include="..\BloggingSystem.Domain\BloggingSystem.Domain.csproj" />
+    <ProjectReference Include="..\BloggingSystem.Infrastructure\BloggingSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
