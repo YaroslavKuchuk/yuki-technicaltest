@@ -11,9 +11,12 @@ namespace BloggingSystem.Api.Controllers;
 public class PostsController(IPostService _postService) : ControllerBase
 {
     [HttpGet("{id:guid}")]
-    public async Task<ActionResult<PostViewModel>> GetById(Guid id, CancellationToken cancellationToken)
+    public async Task<ActionResult<PostViewModel>> GetById(
+        Guid id, 
+        bool showAuthorInfo, 
+        CancellationToken cancellationToken)
     {
-        var post = await _postService.GetByIdAsync(id);
+        var post = await _postService.GetByIdAsync(id, showAuthorInfo);
 
         if (post is null) 
             return NotFound();
