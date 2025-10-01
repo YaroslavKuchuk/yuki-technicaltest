@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Blog.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace Blog.Persistence;
+namespace Blog.Infrastructure;
 
 public sealed class BlogDbContext(DbContextOptions<BlogDbContext> options) : DbContext(options)
 {

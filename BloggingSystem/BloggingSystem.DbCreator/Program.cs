@@ -1,4 +1,4 @@
-﻿using Blog.Persistence;
+﻿using Blog.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
