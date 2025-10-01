@@ -6,6 +6,6 @@ namespace BloggingSystem.Domain.Repositories.Abstractions
     {
         Task<Post> GetByIdAsync(Guid id);
 
-        Task<Guid> Add(Post details);
+        Task<Guid> AddAsync(Post details);
     }
 }

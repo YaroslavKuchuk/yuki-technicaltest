@@ -14,7 +14,7 @@ namespace BloggingSystem.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Guid> Add(Post details)
+        public async Task<Guid> AddAsync(Post details)
         {
             _context.Posts.Add(details);
             await _context.SaveChangesAsync();

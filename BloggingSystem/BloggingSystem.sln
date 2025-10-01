@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A8FC684D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.DbCreator", "BloggingSystem.DbCreator\BloggingSystem.DbCreator.csproj", "{291D8FC0-0024-407D-8A44-010B28224E05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.AppServices", "BloggingSystem.AppServices\BloggingSystem.AppServices.csproj", "{DCF6FDFE-56D7-4778-816A-5EBD36B69D02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.Presentation", "BloggingSystem.Presentation\BloggingSystem.Presentation.csproj", "{83B1B9B5-FA11-416F-88A2-3FE99A98DCA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{291D8FC0-0024-407D-8A44-010B28224E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{291D8FC0-0024-407D-8A44-010B28224E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{291D8FC0-0024-407D-8A44-010B28224E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF6FDFE-56D7-4778-816A-5EBD36B69D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF6FDFE-56D7-4778-816A-5EBD36B69D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF6FDFE-56D7-4778-816A-5EBD36B69D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF6FDFE-56D7-4778-816A-5EBD36B69D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B1B9B5-FA11-416F-88A2-3FE99A98DCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B1B9B5-FA11-416F-88A2-3FE99A98DCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B1B9B5-FA11-416F-88A2-3FE99A98DCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B1B9B5-FA11-416F-88A2-3FE99A98DCA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
