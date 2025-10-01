@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.Tests", "Blo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A8FC684D-FCBD-44DF-81A4-1BF133E0B74C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.DbCreator", "BloggingSystem.DbCreator\BloggingSystem.DbCreator.csproj", "{291D8FC0-0024-407D-8A44-010B28224E05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,12 +51,17 @@ Global
 		{18288E82-AD07-485F-B64E-21D793023020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18288E82-AD07-485F-B64E-21D793023020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18288E82-AD07-485F-B64E-21D793023020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{291D8FC0-0024-407D-8A44-010B28224E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291D8FC0-0024-407D-8A44-010B28224E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291D8FC0-0024-407D-8A44-010B28224E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291D8FC0-0024-407D-8A44-010B28224E05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{18288E82-AD07-485F-B64E-21D793023020} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{291D8FC0-0024-407D-8A44-010B28224E05} = {A8FC684D-FCBD-44DF-81A4-1BF133E0B74C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {611A8356-8353-4475-82E2-0FDBBBED2C70}

@@ -94,3 +94,4 @@ docker-volume-*/
 # Ignore local storage for QR/files (configure your actual path)
 storage/
 files/
+BloggingSystem/BloggingSystem.DbCreator/appsettings.json

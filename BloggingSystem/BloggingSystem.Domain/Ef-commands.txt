@@ -1,0 +1,2 @@
+﻿Add-Migration Initial -Project BloggingSystem.Domain  -StartupProject BloggingSystem.DbCreator -OutputDir Migrations -Context BlogDbContext
+
