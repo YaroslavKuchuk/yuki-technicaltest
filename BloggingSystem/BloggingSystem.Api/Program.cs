@@ -1,3 +1,4 @@
+using BloggingSystem.AppServices.Facades;
 using BloggingSystem.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +13,7 @@ if (!string.IsNullOrWhiteSpace(connectionString))
     builder.Services.AddInfrastructure(connectionString);
 else
     builder.Services.AddInfrastructureInMemory("blogdb-dev");
-
+builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddProblemDetails();
 
 var app = builder.Build();

@@ -14,13 +14,6 @@ namespace BloggingSystem.Presentation.Mapping
             {
                 Id = author.Id,
                 Name = author.Name,
-                Posts = author
-                            .Posts != null
-                                ? author
-                                    .Posts
-                                        .Select(p => p.ToViewModel())
-                                        .ToList()
-                                : Enumerable.Empty<PostViewModel>().ToList(),
                 Surname = author.Surname
             };
 
@@ -36,13 +29,6 @@ namespace BloggingSystem.Presentation.Mapping
             {
                 Id = viewModel.Id,
                 Name = viewModel.Name,
-                Posts = viewModel
-                            .Posts != null
-                                ? viewModel
-                                    .Posts
-                                        .Select(p => p.ToDomain())
-                                        .ToList()
-                                 : Enumerable.Empty<Post>().ToList(),
                 Surname = viewModel.Surname
             };
 

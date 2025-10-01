@@ -27,6 +27,7 @@ namespace BloggingSystem.Infrastructure.Repositories
             var post
                 = await _context
                     .Posts
+                    .Include(p => p.Author)
                         .FirstOrDefaultAsync(p => p.Id == id);
 
             return post;

@@ -12,7 +12,6 @@ namespace BloggingSystem.Presentation.Mapping
 
             var viewModel = new PostViewModel
             {
-                Author = null,
                 AuthorId = post.AuthorId,
                 Content = post.Content,
                 Description = post.Description,
@@ -30,7 +29,6 @@ namespace BloggingSystem.Presentation.Mapping
 
             var post = new Post
             {
-                Author = null,
                 AuthorId = postViewModel.AuthorId,
                 Content = postViewModel.Content,
                 Description = postViewModel.Description,

@@ -8,14 +8,18 @@ namespace BloggingSystem.AppServices.Facades
     {
         Task<Guid> AddPostAsync(PostViewModel postViewModel);
 
-        Task<PostViewModel> GetByIdAsync(Guid id);
+        Task<PostViewModel> GetByIdAsync(Guid id, bool isUseAuthorInfo = false);
     }
     public sealed class PostService : IPostService
     {
         public readonly IPostRepository _postRepository;
-        public PostService(IPostRepository postRepository) 
+
+        public readonly IAuthorRepository _authorRepository;
+        public PostService(IPostRepository postRepository,
+            IAuthorRepository authorRepository) 
         {
             _postRepository = postRepository;
+            _authorRepository = authorRepository;
         }
         public async Task<Guid> AddPostAsync(PostViewModel postViewModel)
         {
@@ -31,13 +35,23 @@ namespace BloggingSystem.AppServices.Facades
             return post.Id;
         }
 
-        public async Task<PostViewModel> GetByIdAsync(Guid id)
+        public async Task<PostViewModel> GetByIdAsync(Guid id, bool isUseAuthorInfo = false)
         {
             var post
                 = await _postRepository
                         .GetByIdAsync(id);
 
-            return post.ToViewModel();
+            var postViewModel =  post.ToViewModel();
+
+            if (isUseAuthorInfo)
+            {
+                var authorViewModel
+                    = post.Author?.ToViewModel();
+
+                postViewModel.Author = authorViewModel;
+            }
+
+            return postViewModel;
         }
     }
 }
