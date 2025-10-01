@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BloggingSystem.Domain\BloggingSystem.Domain.csproj" />
+    <ProjectReference Include="..\BloggingSystem.Infrastructure\BloggingSystem.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

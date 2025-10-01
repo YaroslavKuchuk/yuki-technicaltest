@@ -1,4 +1,4 @@
-﻿using Blog.Persistence;
+﻿using Blog.Domain;
 
 namespace BloggingSystem.Domain.Repositories.Abstractions
 {

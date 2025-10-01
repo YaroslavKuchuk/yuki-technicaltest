@@ -1,4 +1,4 @@
-﻿namespace Blog.Persistence;
+﻿namespace Blog.Domain;
 
 public sealed class Post
 {

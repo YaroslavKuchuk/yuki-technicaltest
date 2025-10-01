@@ -1,4 +1,4 @@
-﻿using Blog.Persistence;
+﻿using Blog.Infrastructure;
 using BloggingSystem.Domain.Repositories.Abstractions;
 using BloggingSystem.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
