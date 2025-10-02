@@ -4,18 +4,18 @@ using BloggingSystem.Presentation.ViewModels;
 
 namespace BloggingSystem.AppServices.Facades
 {
-    public interface IPostService
+    public interface IPostsService
     {
         Task<Guid> AddPostAsync(PostViewModel postViewModel);
 
         Task<PostViewModel> GetByIdAsync(Guid id, bool isUseAuthorInfo = false);
     }
-    public sealed class PostService : IPostService
+    public sealed class PostsService : IPostsService
     {
         public readonly IPostRepository _postRepository;
 
         public readonly IAuthorRepository _authorRepository;
-        public PostService(IPostRepository postRepository,
+        public PostsService(IPostRepository postRepository,
             IAuthorRepository authorRepository) 
         {
             _postRepository = postRepository;
