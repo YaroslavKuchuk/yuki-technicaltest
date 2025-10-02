@@ -35,3 +35,5 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<BloggingSystem.Api.Middleware.ErrorHandlingMiddleware>();
 app.MapControllers();
 app.Run();
+
+public partial class Program { }
