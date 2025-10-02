@@ -1,0 +1,42 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="BloggingSystem.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="BloggingSystem.Tests.Unit" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="PostServiceTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="BloggingSystem.Tests.Unit.PostServiceTests.AddPostAsync_Returns_New_Id" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="AddPostAsync_Returns_New_Id" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="BloggingSystem.Tests.Unit.PostServiceTests.GetByIdAsync_NoAuthor_WhenFlagFalse" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetByIdAsync_NoAuthor_WhenFlagFalse" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="BloggingSystem.Tests.Unit.PostServiceTests.GetByIdAsync_WithAuthor_WhenFlagTrue" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="GetByIdAsync_WithAuthor_WhenFlagTrue" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>
