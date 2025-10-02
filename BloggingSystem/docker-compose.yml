@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: blog-mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "${SA_PASSWORD}"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/1433'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+
+  migrator:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: blog-migrator
+    working_dir: /src
+    depends_on:
+      mssql:
+        condition: service_healthy
+    environment:
+      ConnectionStrings__Default: "Server=mssql,1433;Database=${DB_NAME};User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
+      DOTNET_ENVIRONMENT: "${ASPNETCORE_ENVIRONMENT}"
+    volumes:
+      - ./:/src
+    command: >
+      bash -c "dotnet restore &&
+               dotnet run --project BloggingSystem.DbCreator/BloggingSystem.DbCreator.csproj"
+
+  web:
+    build:
+      context: .
+      dockerfile: BloggingSystem.Api/Dockerfile
+    container_name: blog-web
+    environment:
+      ASPNETCORE_ENVIRONMENT: "${ASPNETCORE_ENVIRONMENT}"
+      ConnectionStrings__Default: "Server=mssql,1433;Database=${DB_NAME};User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
+    depends_on:
+      mssql:
+        condition: service_healthy
+      migrator:
+        condition: service_completed_successfully
+    ports:
+      - "8080:8080"
+
+volumes:
+  mssql-data:

@@ -12,7 +12,7 @@ var config = new ConfigurationBuilder()
     .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: false)
     .Build();
 
-var connectionString = "Server=(local);Database=BlogDb;User Id=blogdb;Password=blogdb_123;TrustServerCertificate=True;";
+var connectionString = "Server=mssql,1433;Database=BlogDb;User Id=sa;Password=qweA$123;TrustServerCertificate=True;";
 
 Console.WriteLine($"Using connection: {connectionString}");
 
