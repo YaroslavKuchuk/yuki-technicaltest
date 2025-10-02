@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BloggingSystem.Api.Controllers;
 
+#warning XML formatter is commented
+
 [ApiController]
 [Route("api/[controller]")]
-public class PostsController(IPostService _postService) : ControllerBase
+// [Produces("application/json", "application/xml")]
+public class PostController(IPostsService _postService) : ControllerBase
 {
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<PostViewModel>> GetById(
@@ -25,6 +28,8 @@ public class PostsController(IPostService _postService) : ControllerBase
     }
 
     [HttpPost]
+    // [Consumes("application/json", "application/xml")]
+    // [Produces("application/json", "application/xml")]
     public async Task<ActionResult<object>> Create([FromBody] PostViewModel post, CancellationToken cancellationToken)
     {
         if (post is null) 
