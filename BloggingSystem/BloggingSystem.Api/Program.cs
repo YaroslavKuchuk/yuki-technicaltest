@@ -24,7 +24,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 app.UseMiddleware<BloggingSystem.Api.Middleware.ErrorHandlingMiddleware>();
 app.MapControllers();
 app.Run();
