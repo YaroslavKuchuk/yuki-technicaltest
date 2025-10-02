@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-var env = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Production";
+var env = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "dev";
 Console.WriteLine($"Environment: {env}");
 
 var config = new ConfigurationBuilder()
@@ -12,14 +12,12 @@ var config = new ConfigurationBuilder()
     .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: false)
     .Build();
 
-var conn = config.GetConnectionString("Default")
-           ?? config["ConnectionString"]
-           ?? throw new InvalidOperationException("Connection string not found. Set ConnectionStrings:Default in appsettings.json.");
+var connectionString = "Server=(local);Database=BlogDb;User Id=blogdb;Password=blogdb_123;TrustServerCertificate=True;";
 
-Console.WriteLine($"Using connection: {conn}");
+Console.WriteLine($"Using connection: {connectionString}");
 
 var options = new DbContextOptionsBuilder<BlogDbContext>()
-    .UseSqlServer(conn, sql => sql.EnableRetryOnFailure())
+    .UseSqlServer(connectionString, sql => sql.EnableRetryOnFailure())
     .Options;
 
 using var db = new BlogDbContext(options);
