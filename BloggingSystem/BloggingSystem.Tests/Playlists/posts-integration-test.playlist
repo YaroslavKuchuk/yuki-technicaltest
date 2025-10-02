@@ -1,0 +1,36 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="BloggingSystem.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="BloggingSystem.Tests.Integration" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="PostsApiTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="BloggingSystem.Tests.Integration.PostsApiTests.Create_Then_Get_With_And_Without_Author" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Create_Then_Get_With_And_Without_Author" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="BloggingSystem.Tests.Integration.PostsApiTests.Get_Unknown_Returns_404" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Get_Unknown_Returns_404" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>
