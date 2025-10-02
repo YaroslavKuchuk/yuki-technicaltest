@@ -13,8 +13,8 @@ namespace BloggingSystem.Api.Controllers;
 // [Produces("application/json", "application/xml")]
 public class PostController(IPostsService _postService) : ControllerBase
 {
-    [HttpGet("{id:guid}")]
-    public async Task<ActionResult<PostViewModel>> GetById(
+    [HttpGet("{id:guid}", Name = nameof(GetPostById))]
+    public async Task<ActionResult<PostViewModel>> GetPostById(
         Guid id, 
         bool showAuthorInfo, 
         CancellationToken cancellationToken)
@@ -37,6 +37,6 @@ public class PostController(IPostsService _postService) : ControllerBase
 
         var id = await _postService.AddPostAsync(post);
 
-        return CreatedAtAction(nameof(GetById), new { id }, new { id });
+        return CreatedAtAction(nameof(GetPostById), new { id }, new { id });
     }
 }
